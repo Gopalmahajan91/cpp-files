@@ -1,0 +1,121 @@
+/*------------------------------------------------------------------------
+Name:Gopal Gulab Mahajan
+Roll no:96
+Assignment Name: Implementation of Linear array (static) operations: Insert,
+Delete, Traverse.
+--------------------------------------------------------------------------*/
+
+#include<iostream.h>
+#include<conio.h>
+#include<process.h>
+class demo
+{
+int a[10],i,j,n,item,k;
+public:
+void get();
+void insert();
+void del();
+void dis();
+};
+void demo::get()
+{
+cout<<"\nEnter n";
+cin>>n;
+cout<<"\nEnter Array Element:";
+for(i=1;i<=n;i++)
+cin>>a[i];
+}
+void demo::insert()
+{
+cout<<"\nEnter Position:";
+cin>>k;
+cout<<"\nEnter Item:";
+cin>>item;
+j=n;
+while(j>=k)
+{
+a[j+1]=a[j];
+j--;
+}
+a[k]=item;
+n++;
+}
+void demo::del()
+{
+cout<<"\nEnter Position:";
+cin>>k;
+j=k;
+while(j<=n-1)
+{
+a[j]=a[j+1];
+j++;
+}
+n--;
+}
+void demo::dis()
+{
+cout<<"\n Elements are\n";
+for(i=1;i<=n;i++)
+cout<<a[i]<<"\t";}
+void main()
+{
+clrscr();
+demo d;
+int ch;
+d.get();
+cout<<"\n1. Insert 2.Del 3.Dis 4. Exit\n";
+while(ch!=4)
+{
+cout<<"\n Enter choice";
+cin>>ch;
+switch(ch)
+{
+case 1: d.insert(); break;
+case 2: d.del(); break;
+case 3: d.dis(); break;
+case 4: exit(0);
+}
+}
+getch();
+}
+/**************output*********************
+
+
+Enter n 4                                                                       
+                                                                                
+Enter Array Element:1 2 4 5                                                     
+                                                                                
+1. Insert 2.Del 3.Dis 4. Exit                                                   
+                                                                                
+ Enter choice3                                                                  
+                                                                                
+ Elements are                                                                   
+1       2       4       5
+ Enter choice2                                                                  
+                                                                                
+Enter Position:2
+
+ Enter choice3
+
+ Elements are
+1       4       5
+
+ Enter choice1
+
+Enter Position:2
+
+Enter Item:3
+
+ Enter choice3
+
+ Elements are
+1       3       4       5
+ Enter choice4
+
+
+
+
+                                                                                
+                                                                                
+                                                                                
+4*/
